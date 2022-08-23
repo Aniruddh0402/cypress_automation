@@ -2,7 +2,7 @@ describe('Fb Assign', () => {
 
     it('Create New Account', () => {
 
-        cy.visit('https://www.facebook.com/')
+        cy.visit(Cypress.env('Fburl'))
         cy.get('.fcb > a').click() // Visit the home page of Login
 
         cy.get('[data-testid="open-registration-form-button"]')
@@ -18,15 +18,15 @@ describe('Fb Assign', () => {
 
         cy.get('input[name=reg_email__]') // locate email address element
             .should('be.visible') // Check it is visible or not
-            .type('anirudha.chidrewar@olaorg.com') // Enter value in it
+            .type(Cypress.env('email')) // Enter value in it
 
         cy.get('input[name=reg_email_confirmation__]') // after entering email once it will ask to re-enter it
             .should('be.visible') // check it's visibility
-            .type('anirudha.chidrewar@olaorg.com') // re-enter your email
+            .type(Cypress.env('email')) // re-enter your email
 
         cy.get('input[id=password_step_input]')// locate new pass element
             .should('be.visible') // checl it is visible or not
-            .type('Aniruddh@123')
+            .type(Cypress.env('fbpass'))
 
         cy.get('#day') // locate date of birth dropdown
             .select('4') // select the value
