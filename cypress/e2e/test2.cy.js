@@ -10,7 +10,7 @@ it('Assertion demo', () => {
       .and('be.visible')
       .and('be.enabled')
 
-      expect(true).to.be.true
+   expect(true).to.be.true
 
-      assert.equal(4,4, 'NOT EQUAL') 
+   assert.equal(4, 4, 'NOT EQUAL')
 })

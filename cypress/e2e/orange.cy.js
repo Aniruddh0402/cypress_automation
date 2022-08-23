@@ -1,18 +1,20 @@
 /// <reference types="Cypress" />
 
+const cypress = require("cypress")
+
 describe('orange hrm automate', () => {
 
     it('login using invalid pass', () => {
 
-        cy.visit('https://opensource-demo.orangehrmlive.com/')
+        cy.visit(cypress.env('url'))
 
-        cy.get('#txtUsername')
+        cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input')
             .type('Admin')
 
-        cy.get('#txtPassword')
+        cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input')
             .type('admin12')
 
-        cy.get('#btnLogin')
+        cy.get('.oxd-button')
             .click()
             .url()
             .should('eq', 'https://opensource-demo.orangehrmlive.com/index.php/dashboard')
@@ -24,13 +26,13 @@ describe('orange hrm automate', () => {
 
         cy.visit('https://opensource-demo.orangehrmlive.com/')
 
-        cy.get('#txtUsername')
-            .type('Admin')
+        cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input')
+            .type('Admi')
 
-        cy.get('#txtPassword')
+        cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input')
             .type('admin12')
 
-        cy.get('#btnLogin')
+        cy.get('.oxd-button')
             .click()
             .url()
             .should('eq', 'https://opensource-demo.orangehrmlive.com/index.php/dashboard')
@@ -39,7 +41,7 @@ describe('orange hrm automate', () => {
 
         cy.visit('https://opensource-demo.orangehrmlive.com/')
 
-        cy.get('#btnLogin')
+        cy.get('.oxd-button')
             .click()
             .url()
             .should('eq', 'https://opensource-demo.orangehrmlive.com/index.php/dashboard')
@@ -49,13 +51,13 @@ describe('orange hrm automate', () => {
 
         cy.visit('https://opensource-demo.orangehrmlive.com/')
 
-        cy.get('#txtUsername')
+        cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input')
             .type('Admin')
 
-        cy.get('#txtPassword')
+        cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input')
             .type('admin123')
 
-        cy.get('#btnLogin')
+        cy.get('.oxd-button')
             .click()
             .url()
             .should('eq', 'https://opensource-demo.orangehrmlive.com/index.php/dashboard')
@@ -67,13 +69,13 @@ describe('orange hrm automate', () => {
         cy.get(':nth-child(1) > .quickLaunge > a')
             .click()
 
-        cy.get('#txtUsername')
+        cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input')
             .type('Admin')
 
-        cy.get('#txtPassword')
+        cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input')
             .type('admin123')
 
-        cy.get('#btnLogin')
+        cy.get('.oxd-button')
             .click()
             .url().should('include', '/leave/assignLeave')
 
@@ -84,7 +86,7 @@ describe('orange hrm automate', () => {
             .select('CAN - Personal')
             .should('have.value', '9')
 
-        cy.get('input[id=assignleave_txtFromDate]')   
+        cy.get('input[id=assignleave_txtFromDate]')
             .click()
         cy.get('select[class=ui-datepicker-year]')
             .select('1999')

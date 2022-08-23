@@ -8,7 +8,7 @@ describe('Automate', () => {
 
     it('login page', () => {
 
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit(Cypress.env('saucedemo_url'))
 
         cy.get('input[id=user-name]')
             .type('problem_user')

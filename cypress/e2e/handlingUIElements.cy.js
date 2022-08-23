@@ -1,7 +1,7 @@
 describe('UI Elements', function () {
     it('verify Inputbox & Radio Buttons', () => {
 
-        cy.visit("https://demo.guru99.com/test/newtours/")
+        cy.visit()
         cy.url().should('include', 'newtours')
 
         cy.get('input[name=userName]')

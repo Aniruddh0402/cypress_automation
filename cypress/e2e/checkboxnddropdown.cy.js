@@ -6,7 +6,7 @@ describe('check nd drop', () => {
 
     it('Checkboxes', () => {
 
-        cy.visit('https://demo.automationtesting.in/Register.html')
+        cy.visit(Cypress.env('checkbox_url'))
 
         cy.get('#checkbox1')
             .check()
