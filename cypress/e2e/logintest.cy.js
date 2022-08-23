@@ -3,10 +3,10 @@ import { Loginpage } from "./Pages/Loginpage"
 const login = new Loginpage()
 
 beforeEach(() => {
-    cy.visit('https://www.saucedemo.com/')
+    cy.visit(Cypress.env('saucedemo_url'))
 
 })
-    describe('All login tests', () => {
+describe('All login tests', () => {
 
 
 

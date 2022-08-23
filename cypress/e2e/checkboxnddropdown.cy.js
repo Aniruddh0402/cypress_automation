@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+Cypress.on('uncaught:exception', (err, runnable) => { return false; });
 
 
 describe('check nd drop', () => {
@@ -55,6 +56,6 @@ describe('check nd drop', () => {
         cy.get('.select2-search__field').type('Ind{enter}')
     })
 
-    
+
 
 })
